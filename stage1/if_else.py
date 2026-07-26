@@ -16,3 +16,11 @@ attendence = input("Entter the marks : ")
 # use 
 if marks>35 and attendence>85:
     print("U r eligble for vote")
+
+# style 2
+# instead of
+
+# if fruit == "Apple" or fruit == "Mango" or fruit == "Orange":
+#     print("use below way");
+# # use 
+# if fruit in ["apple",'banana',"orange"]:
