@@ -29,19 +29,37 @@ while password != "admin":
 # question
 
 # Print numbers from 1 to 10.
-for i in range(100):
+for i in range(10):
     print(i)
     
     
 # Print the multiplication table of 5.
-for i in range(10):
-    print(i/2);
+for i in range(1,11):
+    print(i*5);
+# or 
+table = [i*5 for i in range(10)]
 
-Print the sum of numbers from 1 to 10.
-Print each character of a string.
-while
-Print numbers from 10 to 1.
-Keep asking the user for a password until they enter "admin".
-for i in range(100):
+
+# Print the sum of numbers from 1 to 10.
+sum = [i+i for i  in sum(range(1,11))]
+print(sum)
+
+
+# Print each character of a String.
+sting = "name"
+for ch in sting:
+    print(ch)
+
+
+
+
+# while questions
+# Print numbers from 10 to 1.
+i = 10
+while i>=1:
     print(i)
     
+# Keep asking the user for a password until they enter "admin".
+password =""
+while password != "admin":
+    password = input("enter correct password : ");
