@@ -60,6 +60,6 @@ while i>=1:
     print(i)
     
 # Keep asking the user for a password until they enter "admin".
-password =""
+password = ""
 while password != "admin":
     password = input("enter correct password : ");
