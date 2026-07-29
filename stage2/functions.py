@@ -88,7 +88,7 @@ def welcome(name=None):
 
 # Create a function calculate_price(price, tax=18) that prints the total price after adding tax.
 def calculate_price(price,tax=18):
-    price = price+(price*(18/100))
+    price = price+(price*(tax/100))
     print(f"total price : {price}")
     
 # Create a function student(name, branch="CSE", year=2) and call it in three different ways.
