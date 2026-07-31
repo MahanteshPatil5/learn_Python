@@ -44,9 +44,36 @@ add(*values)  #by using unpack (* unpack the list to numbers) and those are adde
 # Coding Questions
 # Easy
 # Create a function that accepts any number of integers and prints them one by one.
+def print_args(*args):
+    for i in args:
+        print(i)
+        
 # Create a function that accepts any number of integers and returns their sum.
+def sum_args(*args):
+    sum = 0
+    for i in args:
+        sum += i
+    print("sum : ",sum)
 # Create a function student(name, *marks) that prints the student's name and all marks.
+def student(name,*marks):
+    print("name : ",name)
+    for mark in marks:
+        print(mark)
+        
 # Medium
 # Create a function that accepts any number of numbers and returns the largest number.
+def max_args(*nums):
+    maxnum = nums[0]
+    for num in nums:
+        if maxnum < num:
+            maxnum = num
+    print("largest number : ",maxnum)
+    
 # Create a function that accepts any number of strings and prints only those whose length is greater than 5.
 # Create a function that accepts any number of marks and returns the average.
+def avge(*marks):
+    avg = 0
+    n= len(marks)
+    for mark in marks:
+        avg += mark
+    print(avg/n)
