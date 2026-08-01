@@ -70,3 +70,30 @@ def employee(**details):
         print(details["email"])
     else:
         print("email not provided")
+        
+        
+        
+    
+    
+# next concept Local and global scope
+# local : variable created inside a function and only used inside not accessible outside the program
+# global: variable cretaed outside a function and accessible all along in program
+
+# question
+# Create a global variable balance = 1000. Write a function that updates it using the global keyword.
+balance = 1000
+def update_bal():
+    global balance
+    balance = balance+69
+
+print(balance)#1000
+update_bal()
+print(balance) #1069
+
+
+# Write another version of the same program without using global, by passing balance as a parameter and returning the updated value.
+
+def update_bal(balance):
+    balance = balance+69
+    return balance
+
