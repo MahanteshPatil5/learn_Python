@@ -77,10 +77,26 @@ def sumlist(lst):
    
 # Reverse a string using recursion.
 def reverse(strin):
-    if not string:
-        return
+    if not strin:
+        return ""
+    return (reverse(strin[1:])+ strin[0])
+
+print(reverse("hello"))
+    
+    # OR
+    # str="vandana"
+    # new_str=str[::-1]
+    # print(new_str)
+    
+    # rev=""
+    # for ch in str:
+    #     rev=ch+rev
+    # print(rev)
+    
     
 # Check whether a string is a palindrome using recursion.
+# def palin(strin):
+#     if strin
 # Find the maximum element in a list using recursion.
 # DSA Level (Try Later)
 # Fibonacci using recursion.

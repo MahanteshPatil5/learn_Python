@@ -10,3 +10,12 @@ num = list(range(1,11))
 # list can different data types data in single variable (tagether we can save different data)
 list = [10,"name",10.333,True]
 
+
+# Quesiton
+# Create a list of five numbers and print the third number.
+number = [10,20,30,50,60]
+print(number[2])
+
+
+# Change the first element of a list.
+number[0]=5
