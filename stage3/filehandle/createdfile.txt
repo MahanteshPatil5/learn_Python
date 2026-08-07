@@ -1,0 +1,5 @@
+Hi broo this is file created in append modeHi broo this is file created in append mode
+ this is just appended to the existing fileHi broo this is file created in append mode
+ this is just appended to the existing fileHi broo this is file created in append mode
+ this is just appended to the existing fileHi broo this is file created in append mode
+ this is just appended to the existing file
