@@ -21,3 +21,27 @@ except ValueError:
     print('Enter the age avlue a number: ')
 except ZeroDivisionError:
     print("Enter the b value > 0 ")
+    
+    
+# else  :: runs when no exception occurs: 
+else:    #when no error
+    print("You entered : ",age)
+    
+# finaly :: runs whenever an exceptiion occur or not
+finally:  #this runns after all except and try done
+    print("finished")
+
+
+
+# getting errors
+try:
+    result = 10/0
+except ZeroDivisionError as error:
+    print(error)              # output : ZeroDividsionError
+    
+
+# raise
+age = int(input("Enter ur age : "))
+if age<18:
+    raise ValueError("Age should be abouve 18 ")
+
