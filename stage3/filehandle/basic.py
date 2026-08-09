@@ -47,5 +47,10 @@ file.seek(0) #cursur back to 0
 # when a file is opened and doing some action on it and got an error before close so that file will never close 
 # so to close if an error occures also with is used
 with (open("student.txt","a"))as file:
-    print(file.read())
+    print(file.read())    #after complting block automaticaly file is closed
+    
+# some methods 
+# read() to read all content of a file
+# readline() to one line of file
+# readlines() to read all content line by line 
 
