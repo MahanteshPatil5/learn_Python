@@ -8,3 +8,4 @@ data["address"]["city"] # Gokak
 
 
 # 2.JOSM Sr9cals ptjrt onkect 
+jph . resr rl nldjmm,
