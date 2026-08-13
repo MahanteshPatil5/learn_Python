@@ -44,4 +44,25 @@ try:
     file4 = json.loads(JSON_string)  #json string is a sting entering to json file
 except json.JSONDecodeError:
     print("Invalid JSON")
-    
+# this is so the data comeing from users should never be blindly trusted
+
+# JSON in HTTP APIs
+# when frontend sends data likee
+{
+    "username" : "Mantu",
+    "password": "Crazy"
+}
+# this is taken by backend and converted to python object 
+# after receiving this backend can send msg likee 
+{
+    "success" : true,
+    "msg" : "Login Successful"
+}  # JSOn acts as the language between FE and BE
+
+# 9.JSON array
+[
+    {"name": "Mahantesh"},
+    {"name": "vinay"},
+    {"name": "vivek"}
+]  # a list containing dictionaries  used in 
+
