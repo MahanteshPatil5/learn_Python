@@ -64,5 +64,5 @@ except json.JSONDecodeError:
     {"name": "Mahantesh"},
     {"name": "vinay"},
     {"name": "vivek"}
-]  # a list containing dictionaries  used in 
+]  # a list containing dictionaries  used in API 
 

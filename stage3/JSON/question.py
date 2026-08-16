@@ -17,7 +17,7 @@ with open("question.json", "w") as file:
     json.dump(students,file,indent=4)
 
 with open("question.json", "r") as file:
-    print(json.load(file,))
+    print(json.load(file))
     
 for student in students:
-    print(student["skills"[i]])
+    print("name : ",student["name"],"skill : ",student["skills"][0])

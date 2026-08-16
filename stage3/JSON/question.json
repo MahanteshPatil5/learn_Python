@@ -1,1 +1,18 @@
-[{"name": "Mahantesh", "age": 20, "skills": ["Python", "SQL"]}, {"name": "Rahul", "age": 21, "skills": ["Java", "C++"]}]
+[
+    {
+        "name": "Mahantesh",
+        "age": 20,
+        "skills": [
+            "Python",
+            "SQL"
+        ]
+    },
+    {
+        "name": "Rahul",
+        "age": 21,
+        "skills": [
+            "Java",
+            "C++"
+        ]
+    }
+]
