@@ -66,3 +66,10 @@ except json.JSONDecodeError:
     {"name": "vivek"}
 ]  # a list containing dictionaries  used in API 
 
+# after questions 
+# extra things
+# 1.Data validation :  data entered is wrong but the data is correct so before taking any data check the validity
+# 2. data optional: some data entering will be optional so this comes under API request model
+# 7.JSON security: when user giving data which is invalid so data should be:
+# parsing -> validdation -> processing  -> databse    :: ussed in authentication process
+

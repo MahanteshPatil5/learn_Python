@@ -1,0 +1,32 @@
+a venv is a project environment where packages required by each project will be installed
+when2 projects are running and taking global packages can conflict the other project so use venv
+venv :: virtual environment to install packages
+
+creatiing venv:
+inside project folder: 
+python -m venv venv    (python, -m venv(tells to use built in VE modle), venv(name of folder))
+after creatiing we have to activate that venv :: venv\Scripts\Activate.ps1  (use this to activate that environment)
+to deactivate the venv :: deactivate  (run in active terminal)
+
+when environmentis active u can install any requests so they will be strored in that environment.
+
+
+in simple words ::
+when want to install some requirments :: 
+pip install ___ (can install into whole system)
+to install into a project install only in venv so it will not install globally.
+
+Question:: 
+Small things to try
+Create a folder called python_backend.
+Create a venv inside it.
+Activate it.
+Run python --version.
+Run where python and observe the path.
+Deactivate it.
+Activate it again.
+
+mkdir python_backend
+cd python_backend
+python -m venv newvenv
+newvenv\Scripts\Activate.ps1
