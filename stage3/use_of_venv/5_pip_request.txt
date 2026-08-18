@@ -1,0 +1,29 @@
+some modules in python are normaly imported but some like flask, fastapi all need to be installed before there are imported
+so intall them in a venv so that work only for that project
+
+(with acivating venv)
+// pip install requests   :: now python can use import requests
+check installed packages :: pip list
+update a packkage :: pip install --upgrade requests
+removing a package : ::pip uninstall requests
+
+
+requirments.txt :: a file which tells which are requirments to be installed so the project will run
+uplaod this to git so developer can get to know what he has used in project
+requirments.txt :: cantains project dependencies and versions 
+//  all can be installed useing :: pip install -m requirments.txt   // with this all dependencies wi;; be innstalled to folder
+after installing all the packages required by project use :: pip freeze > requirements.txt (freeze shws all the packages > redirets to requirements.txt)
+
+
+Small Task
+Inside your activated venv:
+Install requests.
+pip install requests (python -m pip install requests)
+Run pip list.        pip list
+Run pip show requests.   
+Create requirements.txt using:
+pip freeze > requirements.txt          ::created a file name requirements.txt 
+Open the file and see what was recorded.
+Create another fresh venv and try:
+pip install -r requirements.txt
+

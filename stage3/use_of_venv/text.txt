@@ -29,4 +29,8 @@ Activate it again.
 mkdir python_backend
 cd python_backend
 python -m venv newvenv
-newvenv\Scripts\Activate.ps1
+newvenv\Scripts\Activate.ps1  (source venv/Scripts/activate)
+python --version
+where python
+deactivate
+
