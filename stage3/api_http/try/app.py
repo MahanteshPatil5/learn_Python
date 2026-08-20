@@ -18,3 +18,8 @@ def get_student():
     return jsonify(student)
 if __name__ == "__main__":
     app.run(debug=True)
+    
+    
+    
+# to run use :: python -u app.py
+# after runniing open browerser search :: https://127.0.0.1:5000/student  :: u can see the above data
