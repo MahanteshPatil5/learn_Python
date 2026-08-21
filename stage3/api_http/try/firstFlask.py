@@ -8,5 +8,4 @@ def home():
 @app.route("/about")    #use /about to run this function
 def about():
     return"HEllo bro i am in about section"
-
 app.run()
