@@ -1,0 +1,77 @@
+requests :: is a third party library that is used to send HTTP requests to server/apis
+install use :: pip install requests   ,,  import requests
+
+http requests :: when open a website and device communicates with server.
+so request can ask server for :: give me some data, create me somthing, update, delete.. 
+HTTP methods:: common :: 
+GET (retrive data)  , POST (send/create data) , PUT (replace/update data), PATCH (partially update date), delete (delete data)
+
+1.GET request :: 
+suppose api provide:: https://example.com/users
+python: 
+import requests
+response = requests.get("https://example.com/users")
+print(response.status_code)
+ 
+syntax == 
+import request
+url = "url.com"
+response = request.get(url)
+response.status_code (to check about url)
+{200 : success    404: Not found     201: Created    500:server error}
+
+* getting data from server::: 
+response = requests.get(url)
+data = response.json()  (data from url(link) chnaged from json to python object)
+print(data)  (data is printed)
+
+
+
+2.POST  request
+used to send data to url
+
+url = "urll.com"
+data = {
+    "name" : "MANTU","id" :20
+}
+response = request.POST(url,json = data)
+
+
+**Headers  :: headers contain additional information
+headers = {
+    "Authorization" : "Bearer TOKEN"
+} 
+response = request.get(url, headers = headers)
+commonly used for : Authorization, content type, api keys,clint information
+
+**Query parameters 
+params = {
+    "name":"mahantesh","id"=20
+}
+response = request.get(url,params = params)   # module request will build query string
+
+**Timeout:: when a url opening takes more time
+request.get(url, Timeout=5)   # now only wait for 5 seconds then no reply
+
+
+
+3.PUT :: used to updatethe data present
+it replaces the whole data already present ::
+data = {
+    "name": "MANTU","id": 94
+} 
+response = request.put(url, json = data)
+
+4.PATCH :: used to update the data
+it only updates specific data (feild)::
+
+response = request.PATCH(url , json = data)
+
+5.delete : used to delete the request
+response = request.delete(url)
+
+**File upload
+files = {
+    "file" : open('photo.jpg',"rb")
+}
+response = request.post(url,files= files)

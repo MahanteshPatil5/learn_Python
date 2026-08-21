@@ -1,0 +1,26 @@
+FLASK BASIC::
+it is a python web framework.
+a framework gives tools to build a web application or api without having to implement https
+with Flask python can act as server.
+
+first code ::
+from flask import Flask    (import flask)
+app = Flask(__name__)       (creates flask application app becomes the main object through which u cinfigure ur server and routes)  (name tells where the current app module is located)
+@app.route("/")            (this is a route this tells when someone visit / this then the function below this will run)
+def home():               (this is home function after / )
+    return "hello world"    (this is returned)
+app.run()      
+
+
+**ROUTE**
+:: it connects a url path to a python function like
+@app.route("/about")
+def about():
+    return "HEllo bro i am in about section"
+
+
+route and http::
+@app.routes("/students", methods= ["POST"])
+def create_student():
+    return "student created"
+
