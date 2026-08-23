@@ -1,0 +1,10 @@
+a real create operation done here
+
+1.content type:
+while sending json, request should indicate:
+content-type : application/json
+when this is used :: requests.post(url,json=data)  request handels it all
+
+2.check for validation of all inputs needed (use)  :: if not data or (if not isinstance(data,dic()))
+
+3.

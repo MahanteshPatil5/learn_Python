@@ -23,9 +23,24 @@ def create_student():
         if newdata:
             student.update(newdata)
         return jsonify({"message":"student created "})
+    
+@app.route("/student/<int:id>")
+def student(id):
+    return f"student id: {id}"
+
+
+
+@app.route("/about")
+def about():
+    data = {
+        "id":20,"name":"user"
+    }
+    
+    return jsonify(data)   # the data added to api about
+
+
 if __name__ == "__main__":
     app.run (debug=True)
-
 
 # the flask which create api and used in tryflask.py 
 # function shows some data if it wants to get data data can be taken from tryflask.py

@@ -24,3 +24,17 @@ route and http::
 def create_student():
     return "student created"
 
+
+** Dynamic routes
+we can put value directly into a url
+@app.route("/student/<int:id>")
+def student(id):
+    return f"student id: {id}"
+moves to that url which contain that id also
+
+
+
+**https status code in flask
+return {"message" : "student created"}, 201     # write at last so that it will accessed
+
+
