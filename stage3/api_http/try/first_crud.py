@@ -1,3 +1,5 @@
+# complete crud api with flask 
+
 from flask import Flask,request
 app = Flask(__name__)
 students = [] # empty list
@@ -24,8 +26,8 @@ def get_student(id):
     return {"error" : " student not found"},404
 
 #patch:
-@app.route("/students/<int:id>", methods = ["patch"])
-def update():
+@app.route("/students/<int:id>", methods = ["PATCH"])
+def patch_student(id):
     data = request.get_json()
     for student in students:
         if(student["id"]==id):
@@ -33,5 +35,28 @@ def update():
                 student["name"] = data["name"]
             if "branch" in data:
                 student["branch"]==data["branchs"]
-            return students,200
-        return {"messaages":"studen not fornd;"}
+            return students,200    
+    return {"messaages":"studen not fornd;"},404
+
+# update put
+@app.route("student/<int :id>",methods=["PUT"])
+def put_update(id):
+    data = request.get_json()
+    for student in students:
+        if student["id"] in students:
+            student["name"] = data["name"]
+            student["branch"] = data["branch"]
+        return student, 200
+    return {"error":"student not found "},404
+
+# delete
+@app.route("/students/<int:id>",methods=["DELETE"])
+def delete(id):
+    for student in students:
+        if student["id"] =="id":
+            students.remove(student)
+            return {"message ": "student deleted:: "},200
+        
+    return {"error ":"student not found"},404
+
+app.run(debug=True)
