@@ -1,0 +1,22 @@
+foundation of all the backend projects
+CRUD :: create(POST),read(GET),update(PUT/PATCH),delete(DELETE)
+
+Create (post): create a user(ex: student) :: send the data and save it;
+use :: POST /students
+{
+    "branch":"cse","name":"CRAZYYY"
+}
+
+Read (GET):: used to get the data present:
+GET /students   (or) GET /students/101
+
+update: (put/PATCH):: used to update the data
+PATCH /students/101
+{
+    "branch"= "ISE"
+}
+# data chnaged from 101 student
+
+delete (DELETE)::
+DELETE /students/101 ::delete the data present
+

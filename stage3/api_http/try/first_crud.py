@@ -33,5 +33,5 @@ def update():
                 student["name"] = data["name"]
             if "branch" in data:
                 student["branch"]==data["branchs"]
-            return students.200
+            return students,200
         return {"messaages":"studen not fornd;"}
