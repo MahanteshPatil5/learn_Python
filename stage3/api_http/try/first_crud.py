@@ -48,7 +48,7 @@ def patch_student(id):
     return {"messaages":"studen not fornd;"},404
 
 # update put
-@app.route("/student/<int:id>",methods=["PUT"])
+@app.route("/students/<int:id>",methods=["PUT"])
 def put_update(id):
     data = request.get_json()
     
@@ -56,7 +56,7 @@ def put_update(id):
         return {"error": "PUT requires both 'name' and 'branch'"}, 400
     
     for student in students:
-        if student["id"] in id:
+        if student["id"] == id:
             student["name"] = data["name"]
             student["branch"] = data["branch"]
         return student, 200
