@@ -4,6 +4,10 @@ from flask import Flask,request
 app = Flask(__name__)
 students = [] # empty list
 
+@app.route("/")
+def home():
+    return "u r in home page"
+
 #create::
 @app.route("/students",methods=["POST"])
 def create_student():
@@ -16,8 +20,13 @@ def create_student():
     students.append(student)
     return student,201
 
-#read all
-@app.route("/students/<int :id>",method= ["GET"])
+# read all
+@app.route("/students", methods=["GET"])
+def get_all_students():
+    return students, 200
+
+#read by id
+@app.route("/students/<int:id>",methods= ["GET"])
 def get_student(id):
     for student in students:
         if(student["id"] == id):
@@ -30,20 +39,24 @@ def get_student(id):
 def patch_student(id):
     data = request.get_json()
     for student in students:
-        if(student["id"]==id):
+        if student["id"]==id:
             if "name" in data:
                 student["name"] = data["name"]
             if "branch" in data:
-                student["branch"]==data["branchs"]
-            return students,200    
+                student["branch"]=data["branch"]
+            return student,200    
     return {"messaages":"studen not fornd;"},404
 
 # update put
-@app.route("student/<int :id>",methods=["PUT"])
+@app.route("/student/<int:id>",methods=["PUT"])
 def put_update(id):
     data = request.get_json()
+    
+    if not data or "name" not in data or "branch" not in data:
+        return {"error": "PUT requires both 'name' and 'branch'"}, 400
+    
     for student in students:
-        if student["id"] in students:
+        if student["id"] in id:
             student["name"] = data["name"]
             student["branch"] = data["branch"]
         return student, 200
@@ -53,7 +66,7 @@ def put_update(id):
 @app.route("/students/<int:id>",methods=["DELETE"])
 def delete(id):
     for student in students:
-        if student["id"] =="id":
+        if student["id"] == id:
             students.remove(student)
             return {"message ": "student deleted:: "},200
         
