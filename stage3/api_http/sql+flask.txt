@@ -1,0 +1,53 @@
+next topic is to learn SQL+FLASK 
+so to store all the data it should be saved in storage use dtabase
+step1. install mysql connector
+::  pip install mysql-connector-python 
+inside venv (do this)
+
+step 2 :: create database and create required tables in it 
+CREATE DATABASE LEARN_DB;
+USE LEARN_DB;
+
+CREATE TABLE STUDENTS{
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(25) NOT NULL,
+    branch VARCHAR(25) NOT NULL
+};
+
+
+step 3 :: connect to flask using flask code::
+create app.py file ::
+from flask import Flask, jsonfy
+import mysql.connector
+
+app = Flask(__name__)
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "your password",
+    database = "LEARN_DB"
+)
+cursor = db.cursor()
+app.run(debug=True)
+
+
+now :: 
+created a sql db 
+connected to flask 
+and not app.py ready to run 
+
+step 4:: create a real api (GET) to show data present in DATABASE
+@app.route("/students",methods=["GET"])
+def get_student():
+    cursor.execute("select * from students")
+    row = cursor.fetchall()
+    students = []
+    for row in rows:
+        students.append({
+        "id":row[0],
+        "name":row[1],
+        "branch" : row[2]
+        })
+    return students
+
+this is how a backend pattern looks
