@@ -17,7 +17,7 @@ CREATE TABLE STUDENTS{
 
 step 3 :: connect to flask using flask code::
 create app.py file ::
-from flask import Flask, jsonfy
+from flask import Flask, jsonify
 import mysql.connector
 
 app = Flask(__name__)
