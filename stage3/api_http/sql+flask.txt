@@ -8,11 +8,11 @@ step 2 :: create database and create required tables in it
 CREATE DATABASE LEARN_DB;
 USE LEARN_DB;
 
-CREATE TABLE STUDENTS{
+CREATE TABLE STUDENTS(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(25) NOT NULL,
     branch VARCHAR(25) NOT NULL
-};
+);
 
 
 step 3 :: connect to flask using flask code::
