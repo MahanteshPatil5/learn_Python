@@ -1,4 +1,4 @@
-from flask import Flask,jsonify
+from flask import Flask,jsonify,request
 import mysql.connector
 app = Flask(__name__)
 
@@ -27,5 +27,19 @@ def get_students():
         })
     return students
         
+@app.route("/students", methods= ["POST"])
+def post_students():
+    
+    data = request.get_json({
+    "name": "Vivek",
+    "branch": "MBBS"
+})
+    
+    if not data or "name" not in data or "branch" not in data:
+        return "400 error bro enter proper data", 400
+    cursor.execute("INSERT INTO STUDENTS VALUES (%s,%s)",("name", "branch"))
+    db.commit()
+    last = cursor.lastrowid()
+    return {"message" : "student created successfully ","id" = last}
 
 app.run(debug=True)
