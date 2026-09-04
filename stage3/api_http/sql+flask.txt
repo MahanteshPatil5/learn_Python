@@ -51,3 +51,36 @@ def get_student():
     return students
 
 this is how a backend pattern looks
+
+
+next step is with CRUD in SQL
+GET shows data present in sql , POST = will take data from the user, client
+
+POST:
+receive JSON :
+client send :: 
+{
+    "name" = "Vivek",
+    "branch" = "MBBS"
+}
+
+flask (get the data) : data = request.get_json()
+
+Validate data : {check wheather the data have both the inputs or not if both are present and success if not 400 err}
+
+insert to mysql : 
+cursor.execute(
+    "INSERT INTO students values (%s,%s)",(name,branch)
+)
+
+commit(): commit after insert::
+db.commit()
+
+get the last generated ID:
+cursor.lastrowid // give the last created ID
+
+return success result ::
+{
+    "message" : "student created successfully","id" = example;
+}
+
