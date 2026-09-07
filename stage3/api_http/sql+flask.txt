@@ -84,3 +84,4 @@ return success result ::
     "message" : "student created successfully","id" = example;
 }
 
+cheat
