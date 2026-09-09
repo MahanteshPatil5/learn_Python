@@ -1,0 +1,44 @@
+this is a environment file
+all the sensitive imformation , configure values all will be outside the python normal file
+they all will be stored here in the .env file like::
+
+db = mysql.connector.connec(
+    host=:localhost",user="root",password="mypassword",database="db_name"
+)
+
+so this is sensitive info so this should be saved inside some file that can not accessd eisily by programmer
+
+inside .env file save it like::
+db_host = localhost
+db_user = root
+db_pasword = mypassword
+db_name = name_db
+
+so this values can be accessed in side python flask file so no need of sharing info
+
+
+??
+how do python read .env file (env variables)
+
+pip install python-dotenv
+//python
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+password = os.getenv("db_password") // here i can access the env file password variable
+
+
+
+when u want to call sql_db in python flask:: (use)
+db = mysql.connector.connec(
+    host="db_host",user="db_user",password="db_password",database="db_name"
+)
+
+Your small task
+
+In your current Flask + MySQL project:
+
+Install python-dotenv.
+Create .env.
+Move your MySQL host/user/password/database values into it.
+Read them using os.getenv().
