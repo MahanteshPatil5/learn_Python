@@ -1,0 +1,17 @@
+all the flask programs must be in sturcred way so searching of files/tihngs will be easy
+so crete some folders and files and make it proper//
+backend structure will be ::
+backend/
+a. app.py
+b. routes/
+    students_routes.py
+    user_routes.py
+c.database
+etc....
+
+app.py  :: flask appication file crete it properly
+routes/ :: it will having APIs like :: POST PUT DELETE
+database :: handels databse connection 
+services :: actual application logic
+etc...
+
