@@ -13,11 +13,12 @@ db = mysql.connector.connect(
     password=os.getenv("DB_PASSWORD"),
     database = os.getenv("DB_NAME")   
 )
-cursor = db.cursor()
+cursor = db.cursor(dictionary=True)
 
 @app.route("/")
 def home():
     return "hhi bro u r in home of getenv file"
+
 @app.route("/students",methods=["GET"])
 def student_data():
     cursor.execute("select * from students")
