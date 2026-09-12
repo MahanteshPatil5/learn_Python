@@ -22,3 +22,93 @@ ORM
 → You tell SQLAlchemy what you want,
   and SQLAlchemy generates SQL.
 
+//NEXT//
+SQL :: for one data:: cursor.execute{"select * from student"}
+        for more to wirte this "cursor.execute..."  will be more 
+
+so use 
+
+SQLAlchemy :: "change the normal sql query to python words"
+
+ORM::object relational mapping:: 
+SQL :: students table::
+pyhton :: students
+ORM :: connects both : python -> sql
+SQLAlchemy :: 
+Student class → students table
+id            → id column
+name          → name column
+branch        → branch column
+
+by using class and object concept connet to sql and data will be stored::
+
+
+Install  SQLAlchemy::
+pip install flask-sqlalchemy
+
+check :: pip show sqlalchemy
+update requirements :: pip freeze > requirements.txt
+
+database configuration :: same as env
+SQLAlchemy need a URL :: like
+mysql+mysqlconnector://username:password@host/database
+
+create the flask-sqlalchemy object:: 
+basic setup::
+from flask import Flask
+form flask_sqlalchemy impport SQLAlchemy
+
+app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://username:password@host/database"
+
+db = SQLAlchemy(app)
+
+// now db is SQLAlchemy database object . the main object through which Flask interacts with SQLAlchemy
+
+
+create your student model::
+class Student(db.Model):
+    __tablename__ = "students"
+
+    id = db.column(db.Integer, primary_key = True)
+    name = db.column(db.string(100), nullable = False)
+    branch = db.column(db,string(50), nullable = False)
+
+create student(db.model)// python class created
+__tablename__ // this tells sqlalchemy the name of model //
+
+id = db.column(db.Integer, primary_key = True) // id INT PRIMARY KEY similar with name and branch
+
+model = Student 
+table = students
+
+individual student :: student : Student(name = "Crazy", branch = "CSE") // object to Student model
+
+create a student::
+sql :: cursor.execute("INSERT INTO students (name,branch) VALUE (%s,%s)",("Vivek","MBBS"))
+db.commit()
+
+sqlalchemy::
+student = Student(
+    name= ""vinay",branch= "CSE AI"
+    )
+db.session.add(student)
+db.session.commit()
+
+session? :: used before commit :: before commit all the changes are being tracked
+
+read ::
+sql : cursor.execute("select * from students")
+students= cursor.fetchall()
+
+sqlalchemy : students = Student.query.all()  // asking give me all students data
+
+get single student:: 
+sql = select *from students where id = 1;
+
+sqlalchemy : student = db.session.get(Student,1);
+if no students: 
+if student is None:
+    return {"error": "Student not found"},404
+
