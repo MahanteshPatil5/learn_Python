@@ -1,0 +1,24 @@
+SQLAlchemy :: in this writing raw sql flask is chnaged
+SQLAlchemy/ORM
+ORM :: object relational mapping.
+it is just connection between python objects and data tables
+sql :: select * from students;
+ORM :: python representation of student nad ORN translate python oprations to sql
+
+SQLAlchemy :: it is a python library for working with SQL database..
+it can handle things like ::
+database connection
+tables/models
+Insert/ select / update / delete / relationships between tables / Transactions
+
+
+model:: a python representation of database table.
+students model === students table
+
+Raw SQL
+→ You directly tell MySQL what SQL to execute.
+
+ORM
+→ You tell SQLAlchemy what you want,
+  and SQLAlchemy generates SQL.
+
