@@ -112,3 +112,6 @@ if no students:
 if student is None:
     return {"error": "Student not found"},404
 
+filtering::
+select * from students where branch = 'CSE';
+sqlalchemy:: students = Student.query.filter_by(branch="CSE").all()
