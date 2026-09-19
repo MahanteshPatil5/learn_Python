@@ -1,4 +1,4 @@
-from flask import Flask,jsonify
+from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -50,6 +50,32 @@ def teachers_data():
         })
     return jsonify(teacher_list),200
 
+
+
+@app.route("/teacher",methods=["POST"])
+def add_teacher():
+    data = request.get_json()
+    
+    if not data or "name" not in data or "subject" not in data:
+        return jsonify({
+            "error":"name and subject are required"
+        }),400
+        
+    teacher = Teacher(
+        name = data["name"],
+        subject = data["subject"]
+    )
+    db.session.add(teacher)
+    db.session.commit()
+    
+    return jsonify({
+        "message":"teacher added succssfully",
+        "teacher":{
+            "id":teacher.id,
+            "name":teacher.name,
+            "subject":teacher.subject
+        }
+    }),201
 
 if __name__ == "__main__":
     app.run(debug=True)
