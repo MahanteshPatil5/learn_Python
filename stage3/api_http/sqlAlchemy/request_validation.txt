@@ -1,0 +1,30 @@
+when data is requesting to post so that data should be checked validity so that it will not cause err
+api is accepting data like :: "name" , "branch" , "subject"  etc.
+if it has err it should be checked validity before entering into data base;
+
+"never trust data comming from frontend"
+1. required field validation::
+if not data or "name" not in data or "subject" not in data:
+    return jsonify({
+        "error": "name and subject are required"
+    }),400
+
+2. empty value validation ::
+if not data["name"].strip():
+return jsonify({
+    "error" : "name cannot be empty"
+}), 400
+
+3.data type validation::
+if not isinstance(data["name"],str):
+return jsonify({
+    "error" : "name must be a string"
+}), 400
+
+4. size validation::
+if len(data["name"])>20:
+    return jsonify({
+        "error" : "name must be less then 20 char"
+    }),400
+
+#use this in teacher post request;;
