@@ -91,7 +91,7 @@ db.commit()
 
 sqlalchemy::
 student = Student(
-    name= ""vinay",branch= "CSE AI"
+    name= "vinay",branch= "CSE AI"
     )
 db.session.add(student)
 db.session.commit()
@@ -115,3 +115,19 @@ if student is None:
 filtering::
 select * from students where branch = 'CSE';
 sqlalchemy:: students = Student.query.filter_by(branch="CSE").all()
+
+update::
+student.name = "mahantesh"
+student.branch = "CSE"
+db.session.commit()
+
+Delete ::
+db.session.delete(student)
+db.session.commit()
+
+How flask return JOSN::
+SQLAlchemy gives python object::  for simple database data can be converted to JOSN
+but for more dat awe need learn searlization.
+
+
+Cheat push
