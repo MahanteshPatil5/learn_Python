@@ -1,0 +1,59 @@
+concept .1  :: Authentication and authorization
+Important backend concept::
+if database has different users then ::
+when someone enters it should check wheathere they have permission to enter;;
+
+
+Authentication::
+who are you?? // student, admin,teacher etc
+using username and password check backend credentials :: if correct :: (login successfull)
+
+Authorization::
+what are u allowed to do?
+student :: allowed to see his profile
+teacher :: allowed to see student profile
+admin :: allowed to chnage the database (add/delete)
+
+
+
+backend flow::
+use 
+user_id  and password
+
+dont store the password in database directly::
+use "hash" this can convert the password to hash and store it in database
+when user login it will check with password if same then allowed to enter
+
+
+
+//// password hashing::
+when a user register with password dont save the same password in sql use hashed password to compare
+for Password-hashing we use :: bcrypt, scrypt , argon2
+
+just use hading to use it properly:;
+register ::
+password -> hasing -> saved
+
+login::
+password -> varify with hash
+
+if same then login""""
+
+
+
+Example ::: 
+flask::
+
+Registration:
+from warkzeug.security import generate_password_hash, check_password_hash
+password = "hello123"
+hashed_password = generate_password_hash(password)
+print(hashed_password)
+
+Login:
+password = "hello123"
+if check_password_hash(hashed_password,password):
+    print("login successfull")
+else:
+    print("Invalid password")
+
